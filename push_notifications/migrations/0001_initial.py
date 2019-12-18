@@ -2,8 +2,6 @@
 from django.conf import settings
 from django.db import migrations, models
 
-import push_notifications.fields
-
 
 class Migration(migrations.Migration):
 
@@ -35,7 +33,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=255, null=True, verbose_name='Name', blank=True)),
                 ('active', models.BooleanField(default=True, help_text='Inactive devices will not be sent notifications', verbose_name='Is active')),
                 ('date_created', models.DateTimeField(auto_now_add=True, verbose_name='Creation date', null=True)),
-                ('device_id', push_notifications.fields.HexIntegerField(help_text='ANDROID_ID / TelephonyManager.getDeviceId() (always as hex)', null=True, verbose_name='Device ID', blank=True, db_index=True)),
+                ('device_id', models.IntegerField(help_text='ANDROID_ID / TelephonyManager.getDeviceId() (always as hex)', null=True, verbose_name='Device ID', blank=True, db_index=True)),
                 ('registration_id', models.TextField(verbose_name='Registration ID')),
                 ('user', models.ForeignKey(blank=True, to=settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)),
             ],
