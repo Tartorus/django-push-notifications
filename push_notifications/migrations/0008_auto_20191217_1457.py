@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 
 from django.db import migrations, models
 
+import push_notifications
+
 
 class Migration(migrations.Migration):
 
