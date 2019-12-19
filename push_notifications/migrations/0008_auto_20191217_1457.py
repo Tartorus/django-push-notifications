@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='gcmdevice',
             name='device_id',
-            field=models.DecimalField(blank=True, db_index=True, decimal_places=0, help_text='ANDROID_ID / TelephonyManager.getDeviceId() ', max_digits=100, null=True, verbose_name='Device ID'),
+            field=push_notifications.fields.HexDecimalField(blank=True, db_index=True, decimal_places=0, help_text='ANDROID_ID / TelephonyManager.getDeviceId() ', max_digits=100, null=True, verbose_name='Device ID'),
         ),
     ]
